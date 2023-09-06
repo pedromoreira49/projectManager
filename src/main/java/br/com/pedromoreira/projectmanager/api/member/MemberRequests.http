@@ -1,0 +1,31 @@
+### Get Request All members
+GET http://localhost:8080/api/v1/members
+
+### Get request a member with id
+GET http://localhost:8080/api/v1/members/2
+
+### Get request a member with name
+GET http://localhost:8080/api/v1/members/nome/mateus
+
+### Post Request for create a member
+POST http://localhost:8080/api/v1/members
+Content-Type: application/json
+
+{
+  "nome": "Mateus",
+  "email": "mateus@mail.com",
+  "cargo": "developer"
+}
+
+### Patch Request for update ONLY member information
+PATCH http://localhost:8080/api/v1/members/2
+Content-Type: application/json
+
+{
+  "nome": "Pedro",
+  "email": "pedro@mail.com.br",
+  "cargo": "Spring boot developer"
+}
+
+### Delete Request for erase memeber register
+DELETE http://localhost:8080/api/v1/members/1
