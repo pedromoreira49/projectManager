@@ -1,0 +1,14 @@
+### GET all projects
+GET http://localhost:8080/api/v1/projects
+
+### Post Request for create a project
+POST http://localhost:8080/api/v1/projects
+Authorization: Basic admin 123
+Content-Type: application/json
+
+{
+  "nome": "project manager",
+  "descricao": "projeto para conclusao de TADS",
+  "dataDeInicio": "2023-08-01",
+  "dataDeConclusao": null
+}
