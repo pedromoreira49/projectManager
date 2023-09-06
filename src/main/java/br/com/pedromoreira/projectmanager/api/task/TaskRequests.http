@@ -1,0 +1,35 @@
+### Get all tasks
+GET http://localhost:8080/api/v1/tasks
+Authorization: Basic admin 123
+
+### Get request for get task information by ID
+GET http://localhost:8080/api/v1/tasks/1
+Authorization: Basic admin 123
+
+### Post request for create a task
+POST http://localhost:8080/api/v1/tasks
+Authorization: Basic admin 123
+Content-Type: application/json
+
+{
+  "descricao": "Realizar implementação das regras de negócio",
+  "dataDeInicio": "2023-09-06",
+  "prazo": "2023-09-13",
+  "status": false
+}
+
+### Patch request for upgrade a task
+PATCH http://localhost:8080/api/v1/tasks/1
+Authorization: Basic admin 123
+Content-Type: application/json
+
+{
+  "descricao": "Realizar implementação das regras de negócio",
+  "dataDeInicio": "2023-09-06",
+  "prazo": "2023-09-13",
+  "status": true
+}
+
+### Delete request for erase a task
+DELETE http://localhost:8080/api/v1/tasks/2
+Authorization: Basic admin 123
