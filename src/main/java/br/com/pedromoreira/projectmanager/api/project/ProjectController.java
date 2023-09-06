@@ -20,12 +20,36 @@ public class ProjectController {
         return ResponseEntity.ok(service.getProjects());
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<ProjectDTO> selectById(@PathVariable("id") Long id){
+        ProjectDTO p = service.getProjectById(id);
+        return p != null ? ResponseEntity.ok(p) : ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/nome/{nome}")
+    public ResponseEntity<List<ProjectDTO>> selectByName(@PathVariable("nome") String nome){
+        List<ProjectDTO> projects = service.getProjectsByNome(nome);
+        return projects.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(projects);
+    }
+
     @Secured({"ROLE_ADMIN"})
     @PostMapping
     public ResponseEntity<String> insert(@RequestBody Project project){
         ProjectDTO p = service.insert(project);
         URI location = getUri(p.getId());
         return ResponseEntity.created(location).build();
+    }
+
+    @PatchMapping("{id}")
+    public ResponseEntity<ProjectDTO> update(@PathVariable("id") Long id, @RequestBody Project project){
+        project.setId(id);
+        ProjectDTO p = service.update(project, id);
+        return p != null ? ResponseEntity.ok(p) : ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") Long id){
+        return service.delete(id) ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
 
     private URI getUri(Long id) {
