@@ -3,7 +3,7 @@ GET http://localhost:8080/api/v1/projects
 Authorization: Basic admin 123
 
 ### Get request for get project information by id
-GET http://localhost:8080/api/v1/projects/1
+GET http://localhost:8080/api/v1/projects/3
 Authorization: Basic admin 123
 
 ### Get request for get project information by name
@@ -32,6 +32,7 @@ Content-Type: application/json
   "descricao": "api desenvolvida com spring boot",
   "dataDeInicio": "2023-01-30"
 }
+
 
 ### Delete request for erase project information
 DELETE http://localhost:8080/api/v1/projects/2
