@@ -38,9 +38,18 @@ public class MemberService {
 
         if(optional.isPresent()){
             Member db = optional.get();
-            db.setNome(m.getNome());
-            db.setEmail(m.getEmail());
-            db.setCargo(m.getCargo());
+            if(m.getNome() != null) {
+                db.setNome(m.getNome());
+            }
+            if(m.getEmail() != null){
+                db.setEmail(m.getEmail());
+            }
+            if(m.getCargo() != null){
+                db.setCargo(m.getCargo());
+            }
+            if(m.getValorHora() != null){
+                db.setValorHora(m.getValorHora());
+            }
 
             rep.save(db);
 
