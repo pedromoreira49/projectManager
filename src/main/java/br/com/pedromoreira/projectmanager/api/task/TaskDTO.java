@@ -12,6 +12,7 @@ public class TaskDTO {
     private Date dataDeInicio;
     private Date prazo;
     private Boolean status;
+    private Float valorTask;
 
     public static TaskDTO create(Task p){
         ModelMapper modelMapper = new ModelMapper();
