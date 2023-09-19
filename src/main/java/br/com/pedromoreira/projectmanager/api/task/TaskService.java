@@ -36,6 +36,7 @@ public class TaskService {
             db.setDataDeInicio(task.getDataDeInicio());
             db.setPrazo(task.getPrazo());
             db.setStatus(task.getStatus());
+            db.setValorTask(task.getValorTask());
 
             rep.save(db);
             return TaskDTO.create(db);
