@@ -20,6 +20,7 @@ public class ProjectController {
         return ResponseEntity.ok(service.getProjects());
     }
 
+
     @GetMapping("{id}")
     public ResponseEntity<ProjectDTO> selectById(@PathVariable("id") Long id){
         ProjectDTO p = service.getProjectById(id);
