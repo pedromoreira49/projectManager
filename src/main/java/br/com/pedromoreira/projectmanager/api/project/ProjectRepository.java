@@ -1,6 +1,5 @@
 package br.com.pedromoreira.projectmanager.api.project;
 
-import br.com.pedromoreira.projectmanager.api.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
