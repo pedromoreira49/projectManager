@@ -2,6 +2,7 @@ package br.com.pedromoreira.projectmanager.api.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -15,6 +16,7 @@ public class MemberController {
     private MemberService service;
 
     @GetMapping
+    @Secured({"ROLE_ADMIN"})
     public ResponseEntity<List<MemberDTO>> selectAll(){
         return ResponseEntity.ok(service.getMembers());
     }
