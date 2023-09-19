@@ -23,10 +23,14 @@ public class Task {
     private Date dataDeInicio;
     private Date prazo;
     private Boolean status;
+    private Float valorTask;
 
     @ManyToOne()
     private Project project;
 
     @OneToMany(mappedBy = "task")
     private List<Member> members;
+
+    @ManyToMany(mappedBy = "defaultTask")
+    private List<Project> projects;
 }
