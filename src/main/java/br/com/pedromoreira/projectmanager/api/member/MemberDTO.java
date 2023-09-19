@@ -10,6 +10,7 @@ public class MemberDTO {
     private String nome;
     private String email;
     private String cargo;
+    private Float valorHora;
 
     public static MemberDTO create(Member m){
         ModelMapper modelMapper = new ModelMapper();
