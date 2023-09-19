@@ -1,6 +1,8 @@
 package br.com.pedromoreira.projectmanager.api.project;
 
+import br.com.pedromoreira.projectmanager.api.defaultTask.DefaultTask;
 import br.com.pedromoreira.projectmanager.api.member.Member;
+import br.com.pedromoreira.projectmanager.api.projectMember.ProjectMember;
 import br.com.pedromoreira.projectmanager.api.task.Task;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,4 +30,12 @@ public class Project {
 
     @OneToMany(mappedBy = "project")
     private List<Member> members;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "project_task_default", joinColumns = @JoinColumn(name = "project_id"), inverseJoinColumns = @JoinColumn(name = "task_default_id"))
+    private List<DefaultTask> defaultTask;
+
+    @OneToMany(mappedBy = "project")
+    private List<ProjectMember> projectMembers;
+
 }
