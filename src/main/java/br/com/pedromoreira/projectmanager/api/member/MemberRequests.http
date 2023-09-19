@@ -1,5 +1,6 @@
 ### Get Request All members
 GET http://localhost:8080/api/v1/members
+Authorization: Bearer {{auth_token}}
 
 ### Get request a member with id
 GET http://localhost:8080/api/v1/members/2
@@ -18,13 +19,13 @@ Content-Type: application/json
 }
 
 ### Patch Request for update ONLY member information
-PATCH http://localhost:8080/api/v1/members/2
+PATCH http://localhost:8080/api/v1/members/3
+Authorization: Basic admin 123
 Content-Type: application/json
 
+
 {
-  "nome": "Pedro",
-  "email": "pedro@mail.com.br",
-  "cargo": "Spring boot developer"
+  "valorHora": 20.00
 }
 
 ### Delete Request for erase memeber register
